@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /mnt/c/Projects/INF\ 692:/src/INF692
+    container_name: meu_jupyter
+    ports:
+      - "8888:8888"

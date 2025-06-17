@@ -1,0 +1,10 @@
+jupyter
+selenium
+pillow
+reportlab
+pytesseract
+opencv-python-headless
+pyzmq
+cbor2
+coppeliasim_zmqremoteapi_client
+websockets

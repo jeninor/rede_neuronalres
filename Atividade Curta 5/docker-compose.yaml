@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: atividadecurta5-jupyter
+    container_name: atividadecurta5-jupyter
+    volumes:
+      - '/mnt/c/Projects/INF 692:/todo'
+    ports:
+      - "8888:8888"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    runtime: nvidia
+    
+

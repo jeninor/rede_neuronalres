@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  jupyter-vnc:
+    build: .
+    ports:
+      - "8080:8080"   # noVNC
+      - "8888:8888"   # Jupyter
+      - "5901:5901"   # VNC
+      - "23050:23050" # WebSocket API do CoppeliaSim
+    shm_size: '2gb'
+    environment:
+      - NGROK_TOKEN=${NGROK_TOKEN}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    runtime: nvidia

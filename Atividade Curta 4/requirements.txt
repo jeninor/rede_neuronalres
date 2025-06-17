@@ -1,0 +1,14 @@
+jupyter
+numpy
+pandas
+plotly
+opencv-python
+pillow
+matplotlib
+tqdm
+scipy
+scikit-learn
+torch 
+torchvision
+tensorboard
+torchsummary 
