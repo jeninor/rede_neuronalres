@@ -4,16 +4,16 @@ services:
   jupyter-vnc:
     build: .
     ports:
-      - "8080:8080"   # noVNC
-      - "8888:8888"   # Jupyter
-      - "5901:5901"   # VNC
-      - "23050:23050" # WebSocket API do CoppeliaSim
+      - "8080:8080"  # noVNC
+      - "8888:8888"  # Jupyter
+      - "5901:5901"  # VNC
+      - "19997:19997"  # CoppeliaSim Remote API
     shm_size: '2gb'
-    environment:
-      - NGROK_TOKEN=${NGROK_TOKEN}
     deploy:
       resources:
         reservations:
           devices:
             - capabilities: [gpu]
     runtime: nvidia
+    volumes:
+      - ./app:/home/usuario/compartilhado
