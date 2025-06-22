@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     libtesseract-dev \
     libleptonica-dev \
     tesseract-ocr-eng \
-    poppler-utils \ 
+    poppler-utils \
     git \
     libgl1-mesa-glx \
     libglib2.0-0 \
@@ -26,7 +26,9 @@ RUN apt-get update && apt-get install -y \
     texlive-xetex \
     texlive-fonts-recommended \
     texlive-plain-generic \
+    texlive-latex-extra \
     && apt-get clean
+
 
 # Instala o Google Chrome versão 136
 RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
