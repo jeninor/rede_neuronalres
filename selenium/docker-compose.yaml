@@ -17,3 +17,5 @@ services:
     runtime: nvidia
     volumes:
       - ./app:/home/usuario/compartilhado
+    environment:
+      - NGROK_TOKEN=${NGROK_TOKEN}

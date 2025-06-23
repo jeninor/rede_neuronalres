@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Pacotes essenciais do sistema + dependências gráficas
 RUN apt-get update && apt-get install -y \
     wget curl unzip gnupg2 ca-certificates lsb-release \
-    python3 python3-pip supervisor \
+    python3 python3-pip python3-tk python3-pyqt5 supervisor \
     xvfb fluxbox x11vnc x11-utils xterm \
     fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 libatk1.0-0 \
     libcups2 libdbus-1-3 libgdk-pixbuf2.0-0 libnspr4 libnss3 \
@@ -83,5 +83,7 @@ COPY supervisord.conf /etc/supervisord.conf
 ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata
 
 EXPOSE 5901 8080 8888 19997
+
+RUN ngrok config add-authtoken 2ybyFxMLyburibVr6qHR8seKQMp_4yyVq4SkntUUySrYxEGra 
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

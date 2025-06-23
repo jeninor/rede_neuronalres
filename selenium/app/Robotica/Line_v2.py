@@ -2,6 +2,8 @@ from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 import time
 import math
 import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')  # o 'Qt5Agg'
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
@@ -82,7 +84,7 @@ def trajectory_control():
             sim.setJointTargetPosition(axes['axis3'], d3)
             
             # Obter posição atual
-            pose = sim.getObjectPose(tcp_handle, -1)
+            pose = sim.getObjectPosition(tcp_handle, -1)
             current_pos = pose[:3]
             
             # Atualizar plot

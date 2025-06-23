@@ -8,3 +8,8 @@ pyzmq
 cbor2
 coppeliasim_zmqremoteapi_client
 websockets
+sympy
+numpy
+pandas
+matplotlib
+ipympl
